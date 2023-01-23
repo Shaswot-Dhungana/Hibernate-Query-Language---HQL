@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/myhibernate</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hbm2ddl.auto"> update </property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+		
+		
+		
+		
+		<mapping class="com.shaswotdhungana.myhibernate.student" />
+		<mapping class="com.shaswotdhungana.myhibernate.Address" />
+	    <mapping class="com.shaswotdhungana.One2OneMapping.Question" />
+		<mapping class="com.shaswotdhungana.One2OneMapping.Answer" />	
+		<mapping class="com.shaswotdhungana.One2Many_Many2OneMapping.Address" />
+		<mapping class="com.shaswotdhungana.One2Many_Many2OneMapping.EmpDtls" />
+		<mapping class="com.shaswotdhungana.Many2ManyRelationship.Project" />
+		<mapping class="com.shaswotdhungana.Many2ManyRelationship.Emp" />
+			
+	</session-factory>
+
+</hibernate-configuration>
